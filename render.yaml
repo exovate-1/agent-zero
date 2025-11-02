@@ -2,9 +2,6 @@ services:
   - type: web
     name: agent-zero
     env: python
+    pythonVersion: 3.12.10  # compatible with kokoro and other deps
     buildCommand: pip install --no-cache-dir -r requirements.txt
     startCommand: python run_ui.py
-    envVars:
-      - key: PORT
-        value: "10000"
-      # API keys can be added later from Render dashboard
